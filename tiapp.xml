@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
+  <id>com.intridea.tradui</id>
+  <name>Tradui</name>
+  <version>1.0</version>
+  <icon>appicon.png</icon>
+	<persistent-wifi>false</persistent-wifi>
+	<prerendered-icon>false</prerendered-icon>
+	<statusbar-style>opaque</statusbar-style>
+    <windows>
+      <window>
+        <id>initial</id>
+        <title>Creole</title>
+        <url>creole.html</url>
+        <backgroundColor>#fff</backgroundColor>
+        <barColor>#4b5d74</barColor>
+  			<fullscreen>false</fullscreen>
+      </window>
+  </windows>
+  <guid>1f921812-3342-40ec-a67c-083b279b84c7</guid>
+</ti:app>
