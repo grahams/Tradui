@@ -12,3 +12,14 @@ p
 {
 	margin-bottom:20px;
 }
+
+body.about {
+  background-image: url(../images/tradui_load_screen.png);
+  margin: 0px;
+}
+
+div.about {
+  margin: 50px 20px;
+  padding: 10px;
+  background-color: white;
+}
