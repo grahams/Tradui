@@ -8,9 +8,19 @@ h1,h2 {
 	color:#900;
 }
 
-p
-{
+p {
 	margin-bottom:20px;
+}
+
+#loading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 120px;
+	margin: 189px 0px 0px 142px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 body.about {
@@ -23,3 +33,4 @@ div.about {
   padding: 10px;
   background-color: white;
 }
+
