@@ -1,15 +1,15 @@
 var xhr = Titanium.Network.createHTTPClient();
 var tableView;
 var data = [];
-var words = [{creole:'test', english:'translation'},{creole:'test1', english:'translation'},{creole:'test2', english:'translation'}];
+var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var template = {
  rowHeight:50,
  layout:[
-   {type:'text', fontSize:16, fontWeight:'bold', left:10, top:14, width:290, height:40, color:'#222', name:'word'}
+   {type:'text', fontSize:20, fontWeight:'bold', left:10, top:10, width:290, height:40, color:'#222', name:'letter'}
 ]};
 
 function buildData(creole, english) {
-	data.push({word:creole, translation:english, title:creole, hasChild:true});
+	data.push({word:randomNumber, translation:english, title:randomNumber, hasChild:true});
 }
 
 function buildTable() {
@@ -17,9 +17,8 @@ function buildTable() {
 	search.addEventListener('change', function(e) {  e.value; }); 
 	search.addEventListener('return', function(e) { search.blur(); });
 	search.addEventListener('cancel', function(e) { search.blur(); });
-	
-	for(var index in words) {
-	  buildData(words[index].creole,words[index].english);
+	for(var index in alphabet) {
+	  data.push({letter:alphabet[index], title:alphabet[index], hasChild:true});
 	}
 	
 	var win;
@@ -27,15 +26,12 @@ function buildTable() {
 		template:template, 
 		data:data,
 		search:search,
-		filterAttribute:'word'
+		filterAttribute:'letter'
 		}, function(eventObject) {
-		  if (eventObject.searchMode==true) { 
-				search.blur();
-			}
-		  Titanium.API.info(eventObject.rowData);
-		  Titanium.App.Properties.setString("englishTranslation",eventObject.rowData.translation);
-      // win = Titanium.UI.createWindow({url:'/detail.html', title:eventObject.rowData.word});
-      // win.open({animated:true});
+		  if (eventObject.searchMode==true) {  search.blur(); }
+		  Titanium.App.Properties.setString("letter",eventObject.rowData.letter);
+      win = Titanium.UI.createWindow({url:'/words.html', title:eventObject.rowData.letter});
+      win.open({animated:true});
 		});
 
 	Titanium.UI.currentWindow.addView(tableView);
