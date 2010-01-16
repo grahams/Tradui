@@ -34,6 +34,7 @@ function buildTable() {
       win.open({animated:true});
 		});
 
+  activityIndicator.hide();
 	Titanium.UI.currentWindow.addView(tableView);
 	Titanium.UI.currentWindow.showView(tableView);
 }
@@ -46,7 +47,7 @@ window.onload = function(){
   });
 	Titanium.UI.currentWindow.setRightNavButton(infoButton);
 
-  // document.getElementById("loading").style.display = "block";
+  document.getElementById("loading").style.display = "block";
 	if(Titanium.Platform.name == 'android') {
 		activityIndicator = Titanium.UI.createActivityIndicator();
 		activityIndicator.setMessage('Loading...');
@@ -56,6 +57,6 @@ window.onload = function(){
 		activityIndicator = Titanium.UI.createActivityIndicator({id:'loading', style:Titanium.UI.iPhone.ActivityIndicatorStyle.BIG});
 	}
 	
-  // activityIndicator.show();
+  activityIndicator.show();
 	buildTable();
 };
