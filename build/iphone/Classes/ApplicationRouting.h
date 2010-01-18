@@ -17,9 +17,14 @@
 - (NSData*) resolveAppAsset:(NSURL*)url;
 - (NSData*) pageNamedAbout;
 - (NSData*) pageNamedCreole;
+- (NSData*) pageNamedEnglish;
+- (NSData*) pageNamedWord;
 - (NSData*) pageNamedWords;
 - (NSData*) scriptNamedJavascripts_about;
 - (NSData*) scriptNamedJavascripts_creole;
+- (NSData*) scriptNamedJavascripts_english;
+- (NSData*) scriptNamedJavascripts_jquery_1_4;
+- (NSData*) scriptNamedJavascripts_word;
 - (NSData*) scriptNamedJavascripts_words;
 - (NSData*) styleNamedStylesheets_index;
 

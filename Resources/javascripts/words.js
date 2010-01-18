@@ -7,27 +7,31 @@ var template = {
    {type:'text', fontSize:16, fontWeight:'bold', left:10, top:14, width:290, height:40, color:'#222', name:'word'}
 ]};
 
-function buildData(creole, english) {
-  if(Titanium.App.Properties.getString("translateTo") != null && Titanium.App.Properties.getString("translateTo") == 'english') {
-  	data.push({word:english, translation:creole, title:english, hasChild:true});
-  } else {
-  	data.push({word:creole, translation:english, title:creole, hasChild:true});
-  }
+function buildData(word) {
+	data.push({word:word, title:word, hasChild:true});
 }
 
 function buildTable() {
+  var db = Titanium.Database.open('db');
+
+  if(Titanium.App.Properties.getString("translateTo") != null && Titanium.App.Properties.getString("translateTo") == 'english') {
+    var rows = db.execute("SELECT DISTINCT creole FROM dictionary WHERE creole LIKE '"+Titanium.App.Properties.getString("letter")+"%' AND creole != '' ORDER BY creole ASC");
+  } else {
+    var rows = db.execute("SELECT DISTINCT english FROM dictionary WHERE english LIKE '"+Titanium.App.Properties.getString("letter")+"%' AND english != '' ORDER BY english ASC");
+  }
+	while (rows.isValidRow()) {
+    buildData(rows.field(0));
+		rows.next();
+	}
+	// close database
+	rows.close();
+
 	var search = Titanium.UI.createSearchBar({barColor:'#ddd', showCancel:false});
 	search.addEventListener('change', function(e) {  e.value; }); 
 	search.addEventListener('return', function(e) { search.blur(); });
 	search.addEventListener('cancel', function(e) { search.blur(); });
-
-  buildData("intridea","woot");
-  buildData("crisis","woot");
-  buildData("commons","woot");
-  buildData("haiti","woot");
-  buildData("sunlight","woot");
-	
 	var win;
+	var alert;
 	tableView = Titanium.UI.createTableView({
 		template:template, 
 		data:data,
@@ -35,8 +39,9 @@ function buildTable() {
 		filterAttribute:'word'
 		}, function(eventObject) {
 		  if (eventObject.searchMode==true) {  search.blur(); }
-      // win = Titanium.UI.createWindow({url:'/detail.html', title:eventObject.rowData.word});
-      // win.open({animated:true});
+		  Titanium.App.Properties.setString("word",eventObject.rowData.word);
+      win = Titanium.UI.createWindow({url:'/word.html', title:eventObject.rowData.word});
+      win.open({animated:true});
 		});
 
   activityIndicator.hide();

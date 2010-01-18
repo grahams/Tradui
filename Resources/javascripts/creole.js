@@ -12,6 +12,11 @@ function buildData(creole, english) {
 	data.push({word:randomNumber, translation:english, title:randomNumber, hasChild:true});
 }
 
+function buildDatabase() {
+  var db = Titanium.Database.install('/db/dictionary.db','db');
+  Titanium.App.Properties.setBool("dbInstalled",true);
+}
+
 function buildTable() {
 	var search = Titanium.UI.createSearchBar({barColor:'#ddd', showCancel:false});
 	search.addEventListener('change', function(e) {  e.value; }); 
@@ -30,6 +35,7 @@ function buildTable() {
 		}, function(eventObject) {
 		  if (eventObject.searchMode==true) {  search.blur(); }
 		  Titanium.App.Properties.setString("letter",eventObject.rowData.letter);
+      Titanium.App.Properties.setString("translateTo","english")
       win = Titanium.UI.createWindow({url:'/words.html', title:eventObject.rowData.letter});
       win.open({animated:true});
 		});
@@ -58,5 +64,8 @@ window.onload = function(){
 	}
 	
   activityIndicator.show();
+  if(Titanium.App.Properties.getBool("dbInstalled") == null || Titanium.App.Properties.getBool("dbInstalled") == 0) {
+    buildDatabase();
+  }
 	buildTable();
 };

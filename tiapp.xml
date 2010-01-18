@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
-<id>com.intridea.tradui</id>
-<name>Tradui</name>
-<version>1.0</version>
-<icon>../images/icon_cchaiti_48_48.png</icon>
+  <id>com.brendanlim.tandui</id>
+  <name>Tradui</name>
+  <version>1.0</version>
+  <icon>default_app_logo.png</icon>
 	<persistent-wifi>false</persistent-wifi>
 	<prerendered-icon>false</prerendered-icon>
 	<statusbar-style>opaque</statusbar-style>
@@ -11,6 +11,16 @@
         <id>initial</id>
         <title>Creole</title>
         <url>creole.html</url>
+        <icon>images/icon_creole.png</icon>
+        <backgroundColor>#fff</backgroundColor>
+        <barColor>#4b5d74</barColor>
+  			<fullscreen>false</fullscreen>
+      </window>
+      <window>
+        <id>initial</id>
+        <title>English</title>
+        <url>english.html</url>
+        <icon>images/icon_english.png</icon>
         <backgroundColor>#fff</backgroundColor>
         <barColor>#4b5d74</barColor>
   			<fullscreen>false</fullscreen>
