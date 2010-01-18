@@ -1,7 +1,7 @@
 var xhr = Titanium.Network.createHTTPClient();
 var tableView;
 var data = [];
-var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Y","Z"];
 var template = {
  rowHeight:50,
  layout:[
