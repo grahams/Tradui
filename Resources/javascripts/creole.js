@@ -61,7 +61,7 @@ window.onload = function(){
   Titanium.UI.currentWindow.setTitle("Creole to English");
   var infoButton = Titanium.UI.createButton({ systemButton:Titanium.UI.iPhone.SystemButton.INFO_LIGHT });
   infoButton.addEventListener("click", function(){
-    var win = Titanium.UI.createWindow({url:'/about.html', title:"About"});
+    var win = Titanium.UI.createWindow({url:'/about.html', title:"About", backgroundImage:'../images/tradui_about_screen.png'});
     win.open({modal:true});
   });
 	Titanium.UI.currentWindow.setRightNavButton(infoButton);

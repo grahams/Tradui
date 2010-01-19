@@ -27,16 +27,23 @@ p {
 }
 
 body.about {
-  background: transparent url(../images/tradui_load_screen.png) no-repeat scroll top left;
+  background: transparent url(../images/tradui_about_screen.png) no-repeat scroll top left;
   margin: 0px;
 }
 
 div.about {
-  margin: 50px 20px;
+  margin: 30px 20px;
   padding: 10px;
-  background-color: white;
+  background-color: #222;
+  color: #fff;
+  font-size: 14px;
   -webkit-border-radius: 10px;
-  opacity:0.8;
+  opacity:0.9;
+}
+div.about span {
+  color: green;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 body.striped {

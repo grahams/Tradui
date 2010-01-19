@@ -36,8 +36,7 @@ function buildTranslation(sentence,translateTo) {
         		rows.next();
         	}
         } else {
-          Titanium.API.info("8");
-          $("#translate").append("<li>No matches</li>");
+          $("#translate").append("<li style='margin-left:16px;'>No matches</li>");
         }
         Titanium.API.info("9");
         rows.close();        
@@ -87,7 +86,7 @@ function buildFormElements() {
 window.onload = function() {
   var infoButton = Titanium.UI.createButton({ systemButton:Titanium.UI.iPhone.SystemButton.INFO_LIGHT });
   infoButton.addEventListener("click", function(){
-    var win = Titanium.UI.createWindow({url:'/about.html', title:"About"});
+    var win = Titanium.UI.createWindow({url:'/about.html', title:"About", backgroundImage:'../images/tradui_about_screen.png'});
     win.open({modal:true});
   });
 	Titanium.UI.currentWindow.setRightNavButton(infoButton);
