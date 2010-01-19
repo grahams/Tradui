@@ -1,5 +1,5 @@
 function buildDatabase() {
-  var db = Titanium.Database.install('/db/dictionary.db','db');
+  var db = Titanium.Database.install('db/dictionary.db','db');
   Titanium.App.Properties.setBool("dbInstalled",true);
 }
 
@@ -30,6 +30,7 @@ function buildTranslation(sentence,translateTo) {
       }
     }
   }
+  db.close();
 }
 
 function buildFormElements() {
@@ -81,5 +82,10 @@ window.onload = function() {
   if(Titanium.App.Properties.getBool("dbInstalled") == null || Titanium.App.Properties.getBool("dbInstalled") == 0) {
     buildDatabase();
   }
-
+  
+  Titanium.UI.currentWindow.addEventListener('focused',function(e) {
+		setTimeout(function(){
+      Titanium.UI.currentWindow.setTitle("Tradui");
+		},400);
+	});
 }

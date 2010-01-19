@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.intridea.tradui"
+      package="com.brendanlim.grubit"
       android:versionCode="1"
       android:versionName="1"
 >
@@ -28,11 +28,11 @@
         	android:configChanges="keyboardHidden|orientation"
       	/>
 
-		<!-- TI_ACTIVITIES -->
+		
 		
 <!--
 		<provider
-			android:authorities="com.intridea.tradui.titanium"
+			android:authorities="com.brendanlim.grubit.titanium"
 			android:name="org.appcelerator.titanium.TitaniumContentProvider"
 		/>
 -->
@@ -42,6 +42,9 @@
 		/>
 	</application>
 	
-	<!-- TI_PERMISSIONS -->
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	
 	
 </manifest>

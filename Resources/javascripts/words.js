@@ -1,11 +1,22 @@
 var xhr = Titanium.Network.createHTTPClient();
 var tableView;
 var data = [];
-var template = {
- rowHeight:50,
- layout:[
-   {type:'text', fontSize:16, fontWeight:'bold', left:10, top:14, width:290, height:40, color:'#222', name:'word'}
-]};
+var template;
+if(Titanium.Platform.name == 'android') {
+  Titanium.API.info("ANDROID");
+  template = {
+   rowHeight:50,
+   backgroundColor:'#000',
+   layout:[
+     {type:'text', fontSize:20, fontWeight:'bold', left:10, top:10, width:290, height:40, color:'#fff', name:'letter'}
+  ]};
+} else {
+  template = {
+   rowHeight:50,
+   layout:[
+     {type:'text', fontSize:20, fontWeight:'bold', left:10, top:10, width:290, height:40, color:'#222', name:'letter'}
+  ]};
+}
 
 function buildData(word) {
 	data.push({word:word, title:word, hasChild:true});
@@ -33,6 +44,7 @@ function buildTable() {
   }
 	// close database
 	rows.close();
+	db.close();
 
 	var search = Titanium.UI.createSearchBar({barColor:'#ddd', showCancel:false});
 	search.addEventListener('change', function(e) {  e.value; }); 
