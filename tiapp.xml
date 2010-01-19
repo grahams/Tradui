@@ -4,7 +4,7 @@
 <version>1.0</version>
 <icon>icon_cchaiti_48_48.png</icon>
 	<persistent-wifi>false</persistent-wifi>
-	<prerendered-icon>false</prerendered-icon>
+	<prerendered-icon>true</prerendered-icon>
 	<statusbar-style>opaque</statusbar-style>
     <windows>
       <window>
