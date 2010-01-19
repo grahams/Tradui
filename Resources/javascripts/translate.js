@@ -1,36 +1,50 @@
 function buildDatabase() {
   var db = Titanium.Database.install('db/dictionary.db','db');
   Titanium.App.Properties.setBool("dbInstalled",true);
+  db.close();
 }
 
 function buildTranslation(sentence,translateTo) {
+  Titanium.API.info(sentence);
   Titanium.API.info(translateTo);
   $("#translate").html("");
   var wordsArray = sentence.split(" ");
-  var db = Titanium.Database.open('db');
   var rows;
+  Titanium.API.info("00");
   if(wordsArray.length > 0) {
+    Titanium.API.info("0");
     for(var index in wordsArray) {
+      Titanium.API.info("1");
       if(wordsArray[index] != '') {
+        Titanium.API.info("2");
+        var db = Titanium.Database.open('db');
         $("#translate").append("<strong>"+wordsArray[index].toLowerCase()+"</strong>");
         if(translateTo != null && translateTo == 'Creole to English') {
+          Titanium.API.info("3");
           rows = db.execute("SELECT DISTINCT english FROM dictionary WHERE creole = '"+wordsArray[index].toLowerCase()+"' AND english != '' ORDER BY english ASC");
         } else {
+          Titanium.API.info("4");
           rows = db.execute("SELECT DISTINCT creole FROM dictionary WHERE english = '"+wordsArray[index].toLowerCase()+"' AND creole != '' ORDER BY english ASC ");
         }
+        Titanium.API.info("5");
         if(rows != null && rows.getRowCount() > 0) {
+          Titanium.API.info("6");
         	while (rows.isValidRow()) {
+            Titanium.API.info("7");
+        	  Titanium.API.info(rows.field(0));
             $("#translate").append("<li style='margin-left:16px;'>"+rows.field(0)+"</li>");
         		rows.next();
         	}
         } else {
+          Titanium.API.info("8");
           $("#translate").append("<li>No matches</li>");
         }
+        Titanium.API.info("9");
         rows.close();        
+        db.close();
       }
     }
   }
-  db.close();
 }
 
 function buildFormElements() {

@@ -24,7 +24,7 @@ function buildData(creole, english) {
 }
 
 function buildTable() {
-	var search = Titanium.UI.createSearchBar({barColor:'#ddd', showCancel:false});
+	var search = Titanium.UI.createSearchBar({barColor:'#999', showCancel:false});
 	search.addEventListener('change', function(e) {  e.value; }); 
 	search.addEventListener('return', function(e) { search.blur(); });
 	search.addEventListener('cancel', function(e) { search.blur(); });
