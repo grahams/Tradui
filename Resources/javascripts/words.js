@@ -8,7 +8,7 @@ if(Titanium.Platform.name == 'android') {
    rowHeight:50,
    backgroundColor:'#000',
    layout:[
-     {type:'text', fontSize:20, fontWeight:'bold', left:10, top:10, width:290, height:40, color:'#fff', name:'letter'}
+     {type:'text', fontSize:20, fontWeight:'bold', left:10, top:10, width:290, height:40, color:'#ffffff', name:'word'}
   ]};
 } else {
   template = {

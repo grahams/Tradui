@@ -12,7 +12,7 @@
         <title>Tradui</title>
         <url>translate.html</url>
         <icon>images/icon_translate.png</icon>
-        <backgroundColor>#fff</backgroundColor>
+        <backgroundColor>#000</backgroundColor>
         <backgroundImage>images/stripes.png</backgroundImage>
         <barColor>#4b5d74</barColor>
   			<fullscreen>false</fullscreen>
@@ -22,7 +22,7 @@
         <title>Creole</title>
         <url>creole.html</url>
         <icon>images/icon_creole.png</icon>
-        <backgroundColor>#fff</backgroundColor>
+        <backgroundColor>#000</backgroundColor>
         <barColor>#4b5d74</barColor>
   			<fullscreen>false</fullscreen>
       </window>
@@ -31,7 +31,7 @@
         <title>English</title>
         <url>english.html</url>
         <icon>images/icon_english.png</icon>
-        <backgroundColor>#fff</backgroundColor>
+        <backgroundColor>#000</backgroundColor>
         <barColor>#4b5d74</barColor>
   			<fullscreen>false</fullscreen>
       </window>
