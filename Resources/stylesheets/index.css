@@ -27,8 +27,12 @@ p {
 }
 
 body.about {
-  background: transparent url(../images/tradui_about_screen.png) no-repeat scroll top left;
+  background: transparent url(../images/tradui_load_screen.png) no-repeat scroll top left;
   margin: 0px;
+}
+body.black {
+  background: #000;
+  color: #fff;
 }
 
 div.about {
@@ -93,13 +97,26 @@ body.striped.nav {
 	width:170px;
 	font-size: 14px;
 }
-.group_wrapper .field_wrapper .text_field.full {
+.group_wrapper .field_wrapper .text_field.full.android {
 	height:24px;
 	width:270px;
+	font-size: 16px;
+}
+.group_wrapper .field_wrapper .text_field.full.android {
+	height:50px;
+	width:280px;
 	font-size: 16px;
 }
 
 .group_wrapper .field_wrapper .check_box {
   margin-top: 5px;
   float: right;
+}
+
+.search_wrapper {
+  background: #999;
+  width: 308px;
+  margin-top: -10px;
+  margin-left: -10px;
+  padding: 10px 7px;
 }
