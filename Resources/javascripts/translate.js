@@ -11,21 +11,23 @@ function buildTranslation(sentence,translateTo) {
   var rows;
   if(wordsArray.length > 0) {
     for(var index in wordsArray) {
-      $("#translate").append("<strong>"+wordsArray[index].toLowerCase()+"</strong>");
-      if(translateTo != null && translateTo == 'Creole to English') {
-        rows = db.execute("SELECT DISTINCT english FROM dictionary WHERE creole = '"+wordsArray[index].toLowerCase()+"' AND english != '' ORDER BY english ASC");
-      } else {
-        rows = db.execute("SELECT DISTINCT creole FROM dictionary WHERE english = '"+wordsArray[index].toLowerCase()+"' AND creole != '' ORDER BY english ASC ");
+      if(wordsArray[index] != '') {
+        $("#translate").append("<strong>"+wordsArray[index].toLowerCase()+"</strong>");
+        if(translateTo != null && translateTo == 'Creole to English') {
+          rows = db.execute("SELECT DISTINCT english FROM dictionary WHERE creole = '"+wordsArray[index].toLowerCase()+"' AND english != '' ORDER BY english ASC");
+        } else {
+          rows = db.execute("SELECT DISTINCT creole FROM dictionary WHERE english = '"+wordsArray[index].toLowerCase()+"' AND creole != '' ORDER BY english ASC ");
+        }
+        if(rows != null && rows.getRowCount() > 0) {
+        	while (rows.isValidRow()) {
+            $("#translate").append("<li style='margin-left:16px;'>"+rows.field(0)+"</li>");
+        		rows.next();
+        	}
+        } else {
+          $("#translate").append("<li>No matches</li>");
+        }
+        rows.close();        
       }
-      if(rows != null && rows.getRowCount() > 0) {
-      	while (rows.isValidRow()) {
-          $("#translate").append("<li style='margin-left:16px;'>"+rows.field(0)+"</li>");
-      		rows.next();
-      	}
-      } else {
-        $("#translate").append("<li>No matches</li>");
-      }
-      rows.close();
     }
   }
 }
@@ -68,6 +70,13 @@ function buildFormElements() {
 }
 
 window.onload = function() {
+  var infoButton = Titanium.UI.createButton({ systemButton:Titanium.UI.iPhone.SystemButton.INFO_LIGHT });
+  infoButton.addEventListener("click", function(){
+    var win = Titanium.UI.createWindow({url:'/about.html', title:"About"});
+    win.open({modal:true});
+  });
+	Titanium.UI.currentWindow.setRightNavButton(infoButton);
+	
   buildFormElements();
   if(Titanium.App.Properties.getBool("dbInstalled") == null || Titanium.App.Properties.getBool("dbInstalled") == 0) {
     buildDatabase();

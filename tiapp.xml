@@ -9,10 +9,11 @@
     <windows>
       <window>
         <id>translate</id>
-        <title>Translate</title>
+        <title>Tradui</title>
         <url>translate.html</url>
         <icon>images/icon_translate.png</icon>
         <backgroundColor>#fff</backgroundColor>
+        <backgroundImage>images/stripes.png</backgroundImage>
         <barColor>#4b5d74</barColor>
   			<fullscreen>false</fullscreen>
       </window>
