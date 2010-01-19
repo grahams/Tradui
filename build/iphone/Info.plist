@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>default_app_logo.png</string>
+	<string>icon_cchaiti_48_48.png</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.brendanlim.tradui</string>
 	<key>CFBundleInfoDictionaryVersion</key>
