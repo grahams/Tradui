@@ -1,18 +1,12 @@
-Welcome to your Appcelerator Titanium Mobile Project
+TRADUI - Creole to English, English to Creole Translator for iPhone / Android
+==============================================================================
 
+Tradui was built by Intridea for Crisis Commons as part of Crisis Camp DC.  
+Tradui, Creole for "translate", is an application for translating from 
+Creole to English and English to Creole. The data for this application 
+was extracted with permission from the HaitiSurf Creole to English 
+Dictionary. All of the translation capabilities of Tradui are available 
+offline.
 
-
-
-
-
-----------------------------------
-Stuff our legal folk make us say:
-
-Appcelerator, Appcelerator Titanium and associated marks and logos are 
-trademarks of Appcelerator, Inc. 
-
-Titanium is Copyright (c) 2009 by Appcelerator, Inc. All Rights Reserved.
-
-Titanium is licensed under the Apache Public License (Version 2). Please
-see the LICENSE file for the full license.
-
+This app is primarily intended for use by on-the-ground aid workers 
+during the Haiti crisis, but is made freely available for anyone to use.
