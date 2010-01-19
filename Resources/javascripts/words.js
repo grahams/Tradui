@@ -60,7 +60,7 @@ function buildTable() {
 		}, function(eventObject) {
 		  if (eventObject.searchMode==true) {  search.blur(); }
 		  Titanium.App.Properties.setString("word",eventObject.rowData.word);
-      win = Titanium.UI.createWindow({url:'/word.html', title:eventObject.rowData.word});
+      win = Titanium.UI.createWindow({url:'/word.html', title:eventObject.rowData.word, backgroundImage:'../images/stripes.png'});
       win.open({animated:true});
 		});
 
@@ -71,6 +71,13 @@ function buildTable() {
 
 window.onload = function(){
   document.getElementById("loading").style.display = "block";
+  var infoButton = Titanium.UI.createButton({ systemButton:Titanium.UI.iPhone.SystemButton.INFO_LIGHT });
+  infoButton.addEventListener("click", function(){
+    var win = Titanium.UI.createWindow({url:'/about.html', title:"About", backgroundImage:'../images/tradui_load_screen.png'});
+    win.open({modal:true});
+  });
+	Titanium.UI.currentWindow.setRightNavButton(infoButton);
+
 	if(Titanium.Platform.name == 'android') {
 		activityIndicator = Titanium.UI.createActivityIndicator();
 		activityIndicator.setMessage('Loading...');
