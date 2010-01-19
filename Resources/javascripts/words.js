@@ -19,10 +19,18 @@ function buildTable() {
   } else {
     var rows = db.execute("SELECT DISTINCT english FROM dictionary WHERE english LIKE '"+Titanium.App.Properties.getString("letter")+"%' AND english != '' ORDER BY english ASC");
   }
-	while (rows.isValidRow()) {
-    buildData(rows.field(0));
-		rows.next();
-	}
+  if(rows != null && rows.getRowCount() > 0) {
+  	while (rows.isValidRow()) {
+      buildData(rows.field(0));
+  		rows.next();
+  	}
+  } else {
+    Titanium.UI.createAlertDialog({
+		  title:"Sorry",
+		  message:"There are no words that start with this letter."
+		}).show();
+		
+  }
 	// close database
 	rows.close();
 

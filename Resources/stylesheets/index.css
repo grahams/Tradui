@@ -36,3 +36,60 @@ div.about {
   opacity:0.8;
 }
 
+body.striped {
+	margin: 10px;
+	background: transparent url(../images/stripes.png) repeat-y scroll top left;
+}
+
+body.striped.nav {
+	margin: 0px;
+}
+.group_header {
+	padding: 10px 10px 10px 10px; 
+	color: #505769; 
+	text-shadow: 1px 1px 1px #fff; 
+	font-weight: bold;
+}
+.group_wrapper {
+/*	height:89px;
+*/	padding:6px 0px 0px 10px; 
+	background:#fff; 
+	-webkit-border-radius: 10px; 
+	border: 1px solid #a9aaaf; 
+	width: 290px;
+}
+.group_wrapper .label {
+	height:30px;
+	float:left;
+	margin-right:10px; 
+	padding-top: 8px; 
+	padding-bottom: 5px; 
+	width: 90px; color: #000; 
+	font-weight: bold;
+}
+.group_wrapper .middle_border {
+	clear:both; 
+	border-top: 1px solid #a9aaaf; 
+	margin-left: -10px;
+	padding-bottom: 5px;
+}
+.group_wrapper .field_wrapper {
+	float:left; 
+	padding-top: 3px; 
+	padding-bottom: 5px;
+}
+.group_wrapper .field_wrapper .text_field {
+	height:18px;
+	width:170px;
+	font-size: 14px;
+}
+.group_wrapper .field_wrapper .text_field.full {
+	height:24px;
+	width:270px;
+	font-size: 16px;
+}
+
+.group_wrapper .field_wrapper .check_box {
+  margin-top: 5px;
+  float: right;
+}

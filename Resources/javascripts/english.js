@@ -41,6 +41,7 @@ function buildTable() {
 }
 
 window.onload = function(){
+  Titanium.UI.currentWindow.setTitle("English to Creole");
   var infoButton = Titanium.UI.createButton({ systemButton:Titanium.UI.iPhone.SystemButton.INFO_LIGHT });
   infoButton.addEventListener("click", function(){
     var win = Titanium.UI.createWindow({url:'/about.html', title:"About"});

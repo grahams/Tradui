@@ -6,15 +6,11 @@ window.onload = function() {
     var rows = db.execute("SELECT DISTINCT creole FROM dictionary WHERE english = '"+Titanium.App.Properties.getString("word")+"'");
   }
 	while (rows.isValidRow()) {
-	  Titanium.API.info(rows.field(0));
     $("#words").append("<li>"+rows.field(0)+ "</li>");
-    Titanium.API.info("1");
 		rows.next();
 	}
 	// close database
 	rows.close();
 	
-  Titanium.API.info("2");
 	$("#wrapper").show();
-  Titanium.API.info("3");
 }

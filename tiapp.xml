@@ -8,7 +8,16 @@
 	<statusbar-style>opaque</statusbar-style>
     <windows>
       <window>
-        <id>initial</id>
+        <id>translate</id>
+        <title>Translate</title>
+        <url>translate.html</url>
+        <icon>images/icon_translate.png</icon>
+        <backgroundColor>#fff</backgroundColor>
+        <barColor>#4b5d74</barColor>
+  			<fullscreen>false</fullscreen>
+      </window>
+      <window>
+        <id>creole</id>
         <title>Creole</title>
         <url>creole.html</url>
         <icon>images/icon_creole.png</icon>
@@ -17,7 +26,7 @@
   			<fullscreen>false</fullscreen>
       </window>
       <window>
-        <id>initial</id>
+        <id>english</id>
         <title>English</title>
         <url>english.html</url>
         <icon>images/icon_english.png</icon>

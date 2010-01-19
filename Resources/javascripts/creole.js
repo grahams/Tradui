@@ -1,7 +1,7 @@
 var xhr = Titanium.Network.createHTTPClient();
 var tableView;
 var data = [];
-var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Y","Z"];
+var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var template = {
  rowHeight:50,
  layout:[
@@ -46,6 +46,7 @@ function buildTable() {
 }
 
 window.onload = function(){
+  Titanium.UI.currentWindow.setTitle("Creole to English");
   var infoButton = Titanium.UI.createButton({ systemButton:Titanium.UI.iPhone.SystemButton.INFO_LIGHT });
   infoButton.addEventListener("click", function(){
     var win = Titanium.UI.createWindow({url:'/about.html', title:"About"});
