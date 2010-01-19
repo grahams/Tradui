@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
-<id>com.brendanlim.tradui</id>
+<id>com.intridea.tradui</id>
 <name>Tradui</name>
 <version>1.0</version>
-<icon>icon_cchaiti_48_48.png</icon>
+<icon>icon_submission_57_57.png</icon>
 	<persistent-wifi>false</persistent-wifi>
-	<prerendered-icon>true</prerendered-icon>
+	<prerendered-icon>false</prerendered-icon>
 	<statusbar-style>opaque</statusbar-style>
     <windows>
       <window>

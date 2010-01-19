@@ -9,9 +9,9 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>icon_cchaiti_48_48.png</string>
+	<string>icon_submission_57_57.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.brendanlim.tradui</string>
+	<string>com.intridea.tradui</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -26,8 +26,6 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
-     <key>UIPrerenderedIcon</key>
-     <true/>
      <key>UIStatusBarStyle</key>
      <string>UIStatusBarStyleDefault</string>
 </dict>

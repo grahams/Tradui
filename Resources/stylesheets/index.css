@@ -67,6 +67,9 @@ body.striped.nav {
 	-webkit-border-radius: 10px; 
 	border: 1px solid #a9aaaf; 
 	width: 290px;
+	-webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
 }
 .group_wrapper .label {
 	height:30px;
@@ -92,11 +95,13 @@ body.striped.nav {
 	height:18px;
 	width:170px;
 	font-size: 14px;
+	-webkit-user-select: text; /* prevent copy paste, to allow, change 'none' to 'text' */
 }
 .group_wrapper .field_wrapper .text_field.full {
 	height:24px;
 	width:270px;
 	font-size: 16px;
+	-webkit-user-select: text; /* prevent copy paste, to allow, change 'none' to 'text' */
 }
 
 .group_wrapper .field_wrapper .check_box {
