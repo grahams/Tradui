@@ -24,7 +24,7 @@ function buildTranslation(sentence,translateTo) {
         		rows.next();
         	}
         } else {
-          $("#translate").append("<li>No matches</li>");
+          $("#translate").append("<li style='margin-left:16px;'>No matches</li>");
         }
         rows.close();        
       }
