@@ -15,6 +15,8 @@ Pictographs = {
 Sounds = {
     'bandage':      'creole-female-band-aid.mp3',
     'bandaid':      'creole-female-band-aid.mp3',
+    'telephone':    'creole-female-phone.mp3',
+    'rescue':       'creole-female-search-and-rescue.mp3',
     'doctor':       'creole-female-doctor.mp3',
     'first aid':    'creole-female-first-aid.mp3',
     'hospital':     'creole-female-hospital.mp3',

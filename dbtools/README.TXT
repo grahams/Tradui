@@ -6,9 +6,11 @@ their Creole translations and optional Pictographs and Utterances in Creole.
 
 - To add a new Pictograph, edit bootstrap.py, and add the name of the
   Pictograph to the Pictograph dictionary, keyed by its English name.
+  Pictographs are stored in Resources/images/pictographs.
 
 - To add a new Utterance in Creole, edit bootstrap.py, and add the name of the
-  MP3 sample to the Sounds dictionary, keyed by its English name.
+  MP3 sample to the Sounds dictionary, keyed by its English name.  Samples are
+  stored in Resources/audio.
 
 - You will need a sqlite3 command line db engine to use this script.  Edit
   bootstrap.py, and point the "SQLite3" variable to the path of your sqlite3
