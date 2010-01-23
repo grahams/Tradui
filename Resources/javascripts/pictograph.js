@@ -32,24 +32,25 @@ function buildDatabase() {
 function buildTable() {
     // data for tableview
     var data = [
-        {html:'<img src="/images/pictographs/Bandage.png" height="125px" width="125px"/>'},
-        {html:'<img src="/images/pictographs/FirstAid.png" height="125px" width="125px"/>'},
-        {html:'<img src="/images/pictographs/Hospital.png" height="125px" width="125px"/>'},
-        {html:'<img src="/images/pictographs/Water.png" height="125px" width="125px"/>'},
-        {html:'<img src="/images/pictographs/Food.png" height="125px" width="125px"/>'},
+        {html:'<img src="/images/pictographs/Bandage.png" height="125px" width="125px"/>', hasDetail:true, pictographKey:'Bandage'},
+        {html:'<img src="/images/pictographs/FirstAid.png" height="125px" width="125px"/>', hasDetail:true, pictographKey:'FirstAid'},
+        {html:'<img src="/images/pictographs/Hospital.png" height="125px" width="125px"/>', hasDetail:true, pictographKey:'Hospital'},
+        {html:'<img src="/images/pictographs/Water.png" height="125px" width="125px"/>', hasDetail:true, pictographKey:'Water'},
+        {html:'<img src="/images/pictographs/Food.png" height="125px" width="125px"/>', hasDetail:true, pictographKey:'Food'},
     ];
 
     // tableview object
-    var tableView = Titanium.UI.createTableView({data:data,title:'Tableview Test',rowHeight:150}, function(eventObject) 
-    {
-        // Now call some eventhandler function to handle the click event object
-        // Took this from the Kitchen Sink
-        var a = Titanium.UI.createAlertDialog();
-        a.setTitle('Table View Test');
-        a.setMessage('row ' + eventObject.row + ' index ' + eventObject.index + ' section ' + eventObject.section + ' rowData ' + eventObject.rowData);
-        a.show(); 
+    var tableView = Titanium.UI.createTableView({data:data,title:'Tableview Test',rowHeight:150}, 
+        function(eventObject) {
+            if (eventObject.searchMode==true) {  
+                search.blur(); 
+            }
 
-    });
+            Titanium.App.Properties.setString("pictographKey", eventObject.rowData.pictographKey);
+            win = Titanium.UI.createWindow({url:'/pictographDetails.html', title:eventObject.rowData.pictographKey});
+            win.open({animated:true});
+        }
+    );
 
     Titanium.UI.currentWindow.addView(tableView);
     Titanium.UI.currentWindow.showView(tableView);
