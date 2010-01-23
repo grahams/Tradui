@@ -1,3 +1,4 @@
 build/iphone/build/*
 build/iphone/_modules/*
 build/iphone/tmp/*
+.DS_Store
