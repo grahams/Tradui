@@ -36,6 +36,7 @@ function buildTable() {
         {html:'<img src="/images/pictographs/FirstAid.png" height="125px" width="125px"/>'},
         {html:'<img src="/images/pictographs/Hospital.png" height="125px" width="125px"/>'},
         {html:'<img src="/images/pictographs/Water.png" height="125px" width="125px"/>'},
+        {html:'<img src="/images/pictographs/Food.png" height="125px" width="125px"/>'},
     ];
 
     // tableview object

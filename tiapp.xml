@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
-<id>com.brendanlim.tradui</id>
+<id>com.intridea.tradui</id>
 <name>Tradui</name>
 <version>1.0</version>
-<icon>icon_cchaiti_48_48.png</icon>
+<icon>default_app_logo.png</icon>
 	<persistent-wifi>false</persistent-wifi>
 	<prerendered-icon>false</prerendered-icon>
 	<statusbar-style>opaque</statusbar-style>
@@ -31,6 +31,15 @@
         <title>English</title>
         <url>english.html</url>
         <icon>images/icon_english.png</icon>
+        <backgroundColor>#fff</backgroundColor>
+        <barColor>#4b5d74</barColor>
+  			<fullscreen>false</fullscreen>
+      </window>
+      <window>
+        <id>pictograph</id>
+        <title>Pictograph</title>
+        <url>pictograph.html</url>
+        <icon>images/icon_pictograph.png</icon>
         <backgroundColor>#fff</backgroundColor>
         <barColor>#4b5d74</barColor>
   			<fullscreen>false</fullscreen>
