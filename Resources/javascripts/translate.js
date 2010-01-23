@@ -8,33 +8,34 @@ function buildDatabase() {
   db.close();
 }
 
-function buildTranslation(word) {
-  word = word.replace(/^\s*/, "").replace(/\s*$/, ""); // Remove whitespace
+function buildTranslation() {
+  var sentence = Titanium.App.Properties.getString("sentence");
+  $("#translate").html("");
+  var wordsArray = sentence.split(" ");
+  var db = Titanium.Database.open('db');
   var rows;
-  if(word != '') {
-    $("#translate").html("");
-    var db = Titanium.Database.install('db/dictionary.db','db');
-    $("#translate").append("<strong>"+word.toLowerCase()+"</strong>");
-    if(translateTo != null && translateTo == 'Creole to English') {
-      rows = db.execute("SELECT DISTINCT english FROM dictionary WHERE creole = '"+word.toLowerCase()+"' AND english != '' ORDER BY english ASC");
-    } else {
-      rows = db.execute("SELECT DISTINCT creole FROM dictionary WHERE english = '"+word.toLowerCase()+"' AND creole != '' ORDER BY english ASC ");
+  if(wordsArray.length > 0) {
+    for(var index in wordsArray) {
+      if(wordsArray[index] != '') {
+        $("#translate").append("<strong>"+wordsArray[index].toLowerCase()+"</strong>");
+        if(translateTo != null && translateTo == 'Creole to English') {
+          rows = db.execute("SELECT DISTINCT english FROM dictionary WHERE creole = '"+wordsArray[index].toLowerCase()+"' AND english != '' ORDER BY english ASC");
+        } else {
+          rows = db.execute("SELECT DISTINCT creole FROM dictionary WHERE english = '"+wordsArray[index].toLowerCase()+"' AND creole != '' ORDER BY english ASC ");
+        }
+        if(rows != null && rows.getRowCount() > 0) {
+        	while (rows.isValidRow()) {
+            $("#translate").append("<li style='margin-left:16px;'>"+rows.field(0)+"</li>");
+        		rows.next();
+        	}
+        } else {
+          $("#translate").append("<li style='margin-left:16px;'>No matches</li>");
+        }
+        rows.close();        
+      }
     }
-    if(rows != null && rows.getRowCount() > 0) {
-    	while (rows.isValidRow()) {
-    	  Titanium.API.info(rows.field(0));
-        $("#translate").append("<li style='margin-left:16px;'>"+rows.field(0)+"</li>");
-    		rows.next();
-    	}
-    } else {
-      $("#translate").append("<li style='margin-left:16px;'>No matches</li>");
-    }
-    rows.close();        
-    db.close();
-  } else {
-    Titanium.UI.createAlertDialog({title:'Oops!', 
-			message:'You have to enter in a word for us to be able to translate it.'}).show();
   }
+  db.close();
 }
 
 function buildFormElements() {
@@ -69,8 +70,9 @@ function buildFormElements() {
   });
   
   translateButton.addEventListener("click",function(e) {
+    Titanium.App.Properties.setString("sentence",searchField.value);
+    buildTranslation();
     searchField.blur();
-    buildTranslation(searchField.value);
   }); 
 }
 
